@@ -1,0 +1,6 @@
+{
+  "name": "Dentalia Center",
+  "description": "Premium modern dental clinic in Casablanca, Morocco under Dr. Chakri Rim. Providing ultra-luxurious dental aesthetics, implants, orthodontics, and elite patient care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

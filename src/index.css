@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-turquoise-50: #f0fdfc;
+  --color-turquoise-100: #ccfbf1;
+  --color-turquoise-500: #00D4C8;
+  --color-turquoise-600: #00bdae;
+  --color-turquoise-700: #0f766e;
+  
+  --color-navy-50: #f4f6fa;
+  --color-navy-100: #e1e7f0;
+  --color-navy-800: #0e1e38;
+  --color-navy-900: #0A192F;
+  --color-navy-950: #050B14;
+  
+  --color-beige-50: #fdfcf9;
+  --color-beige-100: #fbf9f4;
+  --color-beige-200: #f3efe6;
+  --color-beige-300: #e8e1d2;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    background-color: var(--color-beige-50);
+    color: var(--color-navy-900);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Premium custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige-50);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-100);
+  border-radius: 9999px;
+  border: 2px solid var(--color-beige-50);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-turquoise-500);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-panel-dark {
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* Ambient glows */
+.glow-turquoise {
+  filter: drop-shadow(0 0 20px rgba(0, 212, 200, 0.35));
+}
+
+.glow-navy {
+  filter: drop-shadow(0 0 30px rgba(10, 25, 47, 0.15));
+}
+
+/* Custom visual pulse */
+@keyframes softPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.03); opacity: 1; }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 4s infinite ease-in-out;
+}
